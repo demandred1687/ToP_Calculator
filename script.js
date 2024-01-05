@@ -46,3 +46,7 @@ const factorial = function(x) {
   }
   return total == 0 ? 1 : total;
   };
+
+  const operate = function(op, num1, num2) {
+    
+  };

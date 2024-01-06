@@ -48,5 +48,13 @@ const factorial = function(x) {
   };
 
   const operate = function(op, num1, num2) {
-    
+    switch (op) {
+    case 'plus':
+      return add(num1, num2);
+    case 'minus':
+      return subtract(num1, num2)
+    }
   };
+  let num = [...document.querySelectorAll('.buttons button')];
+  let display = document.querySelector('.text');
+  display.textContent = 'hello';

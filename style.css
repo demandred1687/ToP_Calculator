@@ -10,6 +10,9 @@
     padding: 5px;
     font-size: xx-large;
     text-align: right;
+    border-style: solid;
+    border-color: #778486;
+    border-width: 5px;
 }
 .calc {
     background-color: gray;

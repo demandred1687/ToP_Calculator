@@ -1,6 +1,11 @@
 let num1 = '';
 let num2 = '';
 let op = '';
+let numBtn = [...document.querySelectorAll('.buttons button')];
+let operBtn = [...document.querySelectorAll('.oper button')];
+let display = document.querySelector('.text');
+
+numBtn[0].addEventListener('click', (e) => {return display.textContent('1');});
 
 const add = function(...args) {
     let sum = 0;
@@ -55,6 +60,3 @@ const factorial = function(x) {
       return subtract(num1, num2)
     }
   };
-  let num = [...document.querySelectorAll('.buttons button')];
-  let display = document.querySelector('.text');
-  display.textContent = 'hello';

@@ -8,10 +8,11 @@
 }
 .display .text {
     padding: 5px;
+    height: 30px;
     font-size: xx-large;
     text-align: right;
     border-style: solid;
-    border-color: #778486;
+    border-color: hsl(188, 6%, 50%);
     border-width: 5px;
 }
 .calc {

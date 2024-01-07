@@ -3,9 +3,15 @@ let num2 = '';
 let op = '';
 let numBtn = [...document.querySelectorAll('.buttons button')];
 let operBtn = [...document.querySelectorAll('.oper button')];
-let display = document.querySelector('.text');
+let domDisplay = document.querySelector('.text');
 
-numBtn[0].addEventListener('click', (e) => {return display.textContent('1');});
+
+
+const disp = {
+  
+};
+
+numBtn[0].addEventListener('click', (e)=>{return disp();});
 
 const add = function(...args) {
     let sum = 0;

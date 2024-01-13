@@ -14,6 +14,7 @@
     border-style: solid;
     border-color: hsl(188, 6%, 50%);
     border-width: 5px;
+    text-size-adjust: auto;
 }
 .calc {
     background-color: gray;

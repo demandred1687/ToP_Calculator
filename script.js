@@ -1,27 +1,26 @@
 let num1 = '';
 let num2 = '';
 let op = '';
-let numBtn = [...document.querySelectorAll('.buttons button')];
-let operBtn = [...document.querySelectorAll('.oper button')];
+let Btn = [...document.querySelectorAll('button')];
+//let operBtn = [...document.querySelectorAll('.oper button')];
 let domDisplay = document.querySelector('.text');
 
 //display number in display box
-numBtn.forEach(function (i) {
+function displayer(val) {
+  return domDisplay.textContent += val;
+}
+//event listener for number
+Btn.forEach(function (i) {
   i.addEventListener('click', function() {
-    num1 = i.textContent;
-    console.log(num1);
-    return domDisplay.textContent += i.textContent;
-  });
-});
-
-operBtn.forEach(function (i) {
-  i.addEventListener('click', function() {
-    if (i.textContent != 'A/C') {
-    return domDisplay.textContent = i.textContent
+    if (i.textContent == 'A/C') {
+    domDisplay.textContent = '';
+    num1 = '';
+    num2 = '';
     } else {
-      domDisplay.textContent = '';
-    }
-  });
+    num1 += i.textContent;
+    console.log(num1);
+    return displayer(i.textContent);
+  }});
 });
 
 const add = function(...args) {

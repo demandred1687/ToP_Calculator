@@ -5,13 +5,24 @@ let numBtn = [...document.querySelectorAll('.buttons button')];
 let operBtn = [...document.querySelectorAll('.oper button')];
 let domDisplay = document.querySelector('.text');
 
+//display number in display box
+numBtn.forEach(function (i) {
+  i.addEventListener('click', function() {
+    num1 = i.textContent;
+    console.log(num1);
+    return domDisplay.textContent += i.textContent;
+  });
+});
 
-
-const disp = {
-  
-};
-
-numBtn[0].addEventListener('click', (e)=>{return disp();});
+operBtn.forEach(function (i) {
+  i.addEventListener('click', function() {
+    if (i.textContent != 'A/C') {
+    return domDisplay.textContent = i.textContent
+    } else {
+      domDisplay.textContent = '';
+    }
+  });
+});
 
 const add = function(...args) {
     let sum = 0;

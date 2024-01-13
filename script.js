@@ -9,14 +9,21 @@ let domDisplay = document.querySelector('.text');
 function displayer(val) {
   return domDisplay.textContent += val;
 }
-//event listener for number
+
+//event listener for buttons
 Btn.forEach(function (i) {
   i.addEventListener('click', function() {
-    if (i.textContent == 'A/C') {
-    domDisplay.textContent = '';
-    num1 = '';
-    num2 = '';
-    } else {
+    switch (true) {
+    case i.textContent == 'A/C':
+      domDisplay.textContent = '';
+      num1 = '';
+      num2 = '';
+      break;
+    case /[-+x/]/.test(i.textContent):
+      op = i.textContent;
+      console.log(op);
+      break;
+    default:
     num1 += i.textContent;
     console.log(num1);
     return displayer(i.textContent);

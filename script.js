@@ -22,15 +22,18 @@ Btn.forEach(function (i) {
       break;
     case i.textContent == '=':
       num2 = Number(domDisplay.textContent);
-      console.log(operate(op, num1, num2));
-      operate(op,num1,num2);
+      console.log(operate(op, num1, num2), op, num1, num2);
+      domDisplay.textContent = operate(op,num1,num2);
       break;
     case /[-+x/]/.test(i.textContent):
       op = i.textContent;
       num1 = Number(domDisplay.textContent);
       console.log(op);
       if (num2 != '') {
-        operate(op,num1,num2);
+      console.log(op);
+      domDisplay.textContent = operate(op,num1,num2);
+      num1 = Number(domDisplay.textContent);
+      num2 = '';
       }
       break;
     default:
@@ -38,10 +41,13 @@ Btn.forEach(function (i) {
         num1 += i.textContent;
         console.log(num1);
         displayer(i.textContent);
+        Number(num1);
       } else {
-        domDisplay.textContent = '';
+        domDisplay.textContent = num2;
         num2 += i.textContent;
+        console.log(num2);
         displayer(i.textContent);
+        Number(num2);
       }
   }});
 });
@@ -67,12 +73,8 @@ const sum = function(arr) {
     return sum;
   };
   
-const multiply = function(arr) {
-  let total = 1;
-  for (let i = 0; i < arr.length; ++i) {
-   total *= arr[i];
-  }
-  return total;
+const multiply = function(x,y) {
+  return x*=y;
   };
   
 const power = function(x,y) {
@@ -95,7 +97,7 @@ const divide = function(x,y) {
   y == 0 ? 'no' : x/=y
   return x;
 }
-console.log(divide(6,2));
+
   const operate = function(op, num1, num2) {
     switch (op) {
     case '+':

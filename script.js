@@ -18,15 +18,31 @@ Btn.forEach(function (i) {
       domDisplay.textContent = '';
       num1 = '';
       num2 = '';
+      op = '';
+      break;
+    case i.textContent == '=':
+      num2 = Number(domDisplay.textContent);
+      console.log(operate(op, num1, num2));
+      operate(op,num1,num2);
       break;
     case /[-+x/]/.test(i.textContent):
       op = i.textContent;
+      num1 = Number(domDisplay.textContent);
       console.log(op);
+      if (num2 != '') {
+        operate(op,num1,num2);
+      }
       break;
     default:
-    num1 += i.textContent;
-    console.log(num1);
-    return displayer(i.textContent);
+      if (op == '') {
+        num1 += i.textContent;
+        console.log(num1);
+        displayer(i.textContent);
+      } else {
+        domDisplay.textContent = '';
+        num2 += i.textContent;
+        displayer(i.textContent);
+      }
   }});
 });
 
@@ -75,11 +91,20 @@ const factorial = function(x) {
   return total == 0 ? 1 : total;
   };
 
+const divide = function(x,y) {
+  y == 0 ? 'no' : x/=y
+  return x;
+}
+console.log(divide(6,2));
   const operate = function(op, num1, num2) {
     switch (op) {
-    case 'plus':
+    case '+':
       return add(num1, num2);
-    case 'minus':
+    case '-':
       return subtract(num1, num2)
+    case '/':
+      return divide(num1, num2)
+    case 'x':
+      return multiply(num1, num2)
     }
   };

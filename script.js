@@ -30,7 +30,7 @@ Btn.forEach(function (i) {
       num1 = Number(domDisplay.textContent);
       console.log(op);
       if (num2 != '') {
-      console.log(op);
+      console.log(op,num1,num2);
       domDisplay.textContent = operate(op,num1,num2);
       num1 = Number(domDisplay.textContent);
       num2 = '';

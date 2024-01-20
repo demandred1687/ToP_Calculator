@@ -15,6 +15,8 @@
     border-color: hsl(188, 6%, 50%);
     border-width: 5px;
     text-size-adjust: auto;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .calc {
     background-color: gray;

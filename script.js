@@ -21,33 +21,33 @@ Btn.forEach(function (i) {
       op = '';
       break;
     case i.textContent == '=':
-      num2 = Number(domDisplay.textContent);
       console.log(operate(op, num1, num2), op, num1, num2);
       domDisplay.textContent = operate(op,num1,num2);
       break;
     case /[-+x/]/.test(i.textContent):
       op = i.textContent;
-      num1 = Number(domDisplay.textContent);
-      console.log(op);
-      if (num2 != '') {
-      console.log(op,num1,num2);
-      domDisplay.textContent = operate(op,num1,num2);
-      num1 = Number(domDisplay.textContent);
-      num2 = '';
+      if (num2 == '') {
+        num1 = Number(domDisplay.textContent);
+        console.log(op, num1, num2);
+      } else {
+        op = i.textContent;
+        domDisplay.textContent = Number(operate(op, num1, num2));
+        num1 = Number(domDisplay.textContent);
+        num2 = '';
       }
       break;
-    default:
+    case /\d/.test(i.textContent) && domDisplay.textContent.length < 16 || op != '':
       if (op == '') {
         num1 += i.textContent;
         console.log(num1);
         displayer(i.textContent);
-        Number(num1);
+        num1 = Number(num1);
       } else {
         domDisplay.textContent = num2;
         num2 += i.textContent;
         console.log(num2);
         displayer(i.textContent);
-        Number(num2);
+        num2 = Number(num2);
       }
   }});
 });

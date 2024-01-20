@@ -38,18 +38,19 @@ Btn.forEach(function (i) {
       }
       break;
     case /\d/.test(i.textContent) && domDisplay.textContent.length < 16 || op != '':
-      if (op == '') {
+      if (op == ''&& domDisplay.textContent.length < 16) {
         num1 += i.textContent;
         console.log(num1);
         displayer(i.textContent);
         num1 = Number(num1);
       } else {
         domDisplay.textContent = num2;
+        if (domDisplay.textContent.length < 16) {
         num2 += i.textContent;
         console.log(num2);
         displayer(i.textContent);
         num2 = Number(num2);
-      }
+      }}
   }});
 });
 

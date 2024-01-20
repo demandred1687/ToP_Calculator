@@ -25,13 +25,14 @@ Btn.forEach(function (i) {
       domDisplay.textContent = operate(op,num1,num2);
       break;
     case /[-+x/]/.test(i.textContent):
-      op = i.textContent;
       if (num2 == '') {
+        op = i.textContent;
         num1 = Number(domDisplay.textContent);
         console.log(op, num1, num2);
       } else {
-        op = i.textContent;
+        console.log(op, num1, num2)
         domDisplay.textContent = Number(operate(op, num1, num2));
+        op = i.textContent;
         num1 = Number(domDisplay.textContent);
         num2 = '';
       }

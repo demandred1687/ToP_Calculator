@@ -20,7 +20,7 @@ Btn.forEach(function (i) {
       num2 = '';
       op = '';
       break;
-    case i.textContent == '=':
+    case i.textContent == '=' && op != '' && num1 != '' && num2 != '':
       console.log(operate(op, num1, num2), op, num1, num2);
       domDisplay.textContent = operate(op,num1,num2);
       break;
@@ -96,8 +96,10 @@ const factorial = function(x) {
   };
 
 const divide = function(x,y) {
-  y == 0 ? 'no' : x/=y
-  return x;
+  if (y == 0) {
+   return 'no cannot';
+  }
+  return x/=y;
 }
 
   const operate = function(op, num1, num2) {
@@ -105,10 +107,13 @@ const divide = function(x,y) {
     case '+':
       return add(num1, num2);
     case '-':
-      return subtract(num1, num2)
+      return subtract(num1, num2);
     case '/':
-      return divide(num1, num2)
+      if (num2 == 0) {
+        return 'lmaooo';
+      }
+      return divide(num1, num2);
     case 'x':
-      return multiply(num1, num2)
+      return multiply(num1, num2);
     }
   };
